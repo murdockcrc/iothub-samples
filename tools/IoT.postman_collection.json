@@ -1,0 +1,49 @@
+{
+	"info": {
+		"_postman_id": "e4519a4f-ce63-49b0-8095-3ea3426efcc0",
+		"name": "IoT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Direct Method - Invoke",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Sas}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"methodName\": \"reboot\",\n    \"payload\": {\n        \"input1\": \"someInput\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{IotHub}}/twins/{{DeviceId}}/methods?api-version=2018-06-30",
+					"host": [
+						"{{IotHub}}"
+					],
+					"path": [
+						"twins",
+						"{{DeviceId}}",
+						"methods"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2018-06-30"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
