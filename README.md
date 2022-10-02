@@ -80,3 +80,7 @@ Uses a document class called _Configuration_ which defines:
 * Metrics which define the counts for various config states, such as Success, In Prgress, Error.
 
 Configurations may conflict with each other if they target the same device and properties. The configuration with the highest priority wins.
+
+## Rollback
+
+Make the devices ineligible for the configuration which broke the device. Ensure that there is another Configuration with lower priority which targets the affected devices.
